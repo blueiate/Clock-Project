@@ -86,7 +86,8 @@ rect(170,-190,80,12);
   pop();
 	
 	
-	console.log(hour(),":",minute());
+console.log(hour(),":",minute());
+	
   
 
   
