@@ -1,0 +1,94 @@
+function setup() {
+  createCanvas(600, 600);
+	
+}
+
+function draw() {
+  background('#1D2951');
+  rectMode(CENTER);
+  angleMode(DEGREES);
+	
+ellipse(width/2,height/2, 100,100);
+	fill('#D3D0C6');
+	noStroke();
+ellipse(width/2,height/2.1, 70,20);
+ellipse(width/2.2,height/2.2, 70,20);
+	fill('#a1a6c4');
+	noStroke();
+	
+	
+  
+   translate(width/2,height/2);
+	
+	push();
+   let hourPlanet = map(hour() % 12, 0, 12, 0, 360);
+   rotate(hourPlanet);
+	 noStroke();
+	 fill('orange');
+   circle(120,-120,40);
+   pop();
+	
+  push();
+	
+	let minUFO = map(minute(),0,60,0,360);
+	fill('lightpurple');
+	rotate(minUFO);
+	noStroke();
+	ellipse(75,105,100,35);
+	ellipse(75, 95, 50, 50);
+	fill('purple');
+	ellipse(70,100,100,30);
+	ellipse(70, 90, 50, 45)
+	pop();
+	
+	
+  push();
+	
+  let secAlien = map(second(),0,60,0,360);
+  rotate(secAlien);
+	
+	
+//obtained alien design from Geoffry (Alien) by jessy valentine 
+	
+	////legs
+fill(159, 222, 22);
+stroke(159, 222, 22);
+rect(200,-160,35,50); //Right
+rect(140,-160,35,50);//Left
+	
+	
+////body 
+fill(187, 235, 84);
+stroke(187, 235, 84);
+circle(170, -190, 95);
+	
+////mouth
+fill(186, 73, 116);
+stroke(186, 73, 116);
+circle(170,-170,38);
+
+	
+////eye
+fill(225);
+stroke(225);
+circle(170, -200,45);
+
+////pupil
+        fill(0);
+        stroke(0);
+        circle(170,-200,25);
+////skin
+fill(187, 235, 84);
+stroke(187, 235, 84);
+rect(170,-190,80,12);
+//block that seperates the eyes and mouth
+
+  pop();
+	
+	
+	console.log(hour(),":",minute());
+  
+
+  
+	
+}
