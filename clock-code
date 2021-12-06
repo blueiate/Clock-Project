@@ -1,22 +1,23 @@
+let earth;
+let mars;
+let ufo 
+
+function preload(){
+earth = loadImage("earth.png");
+ufo = loadImage("UFO.png");
+mars = loadImage("mars.png");
+}
 function setup() {
-  createCanvas(600, 600);
-	
+  createCanvas(800, 800);
 }
 
 function draw() {
   background('#1D2951');
+	imageMode(CENTER);
   rectMode(CENTER);
   angleMode(DEGREES);
-	
-ellipse(width/2,height/2, 100,100);
-	fill('#D3D0C6');
-	noStroke();
-ellipse(width/2,height/2.1, 70,20);
-ellipse(width/2.2,height/2.2, 70,20);
-	fill('#a1a6c4');
-	noStroke();
-	
-	
+
+	image(earth,width/2,height/2,250,250); 
   
    translate(width/2,height/2);
 	
@@ -24,21 +25,16 @@ ellipse(width/2.2,height/2.2, 70,20);
    let hourPlanet = map(hour() % 12, 0, 12, 0, 360);
    rotate(hourPlanet);
 	 noStroke();
-	 fill('orange');
-   circle(120,-120,40);
+	 image(mars, 120,-120, 180,140);
    pop();
 	
   push();
 	
-	let minUFO = map(minute(),0,60,0,360);
-	fill('lightpurple');
+	let minUFO = map(minute(),0,59,0,359);
 	rotate(minUFO);
+	arc(0, 0, 280, 280, 0, 0);
 	noStroke();
-	ellipse(75,105,100,35);
-	ellipse(75, 95, 50, 50);
-	fill('purple');
-	ellipse(70,100,100,30);
-	ellipse(70, 90, 50, 45)
+	image(ufo,120,-120,200,200);
 	pop();
 	
 	
@@ -49,17 +45,18 @@ ellipse(width/2.2,height/2.2, 70,20);
 	
 	
 //obtained alien design from Geoffry (Alien) by jessy valentine 
+	//with altered colors and additional limbs
 	
 	////legs
-fill(159, 222, 22);
-stroke(159, 222, 22);
+fill("#e5c100"); 
+stroke("#e5c100");
 rect(200,-160,35,50); //Right
 rect(140,-160,35,50);//Left
 	
 	
 ////body 
-fill(187, 235, 84);
-stroke(187, 235, 84);
+fill("#ffe34c");
+stroke("#ffe34c");
 circle(170, -190, 95);
 	
 ////mouth
@@ -78,18 +75,12 @@ circle(170, -200,45);
         stroke(0);
         circle(170,-200,25);
 ////skin
-fill(187, 235, 84);
-stroke(187, 235, 84);
+fill("#ffe34c");
+stroke("#ffe34c");
 rect(170,-190,80,12);
 //block that seperates the eyes and mouth
 
   pop();
-	
-	
-console.log(hour(),":",minute());
-	
   
 
-  
-	
 }
